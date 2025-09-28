@@ -1,0 +1,18 @@
+search_countries_by_name:
+  - name_query: france
+    full_text: false
+    expected_code: 200
+    expected_min_count: 1
+    expected_contains: France
+
+  - name_query: united
+    full_text: false
+    expected_code: 200
+    expected_min_count: 3
+    expected_contains: United States
+
+  - name_query: nonexistentcountry
+    full_text: false
+    expected_code: 404
+    expected_min_count: 0
+    expected_contains: null
